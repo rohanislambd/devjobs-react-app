@@ -1,14 +1,19 @@
 
+import { FaBookmark } from "react-icons/fa";
 import type { IJob } from "../types/type";
 
 interface JobCardProp {
-  job: IJob
+  job: IJob;
   handleSavedJob: (job:IJob) =>void;
+  savedJobs: IJob[];
 }
 
-const JobCard = ({ job, handleSavedJob }: JobCardProp) => {
+const JobCard = ({ job, handleSavedJob , savedJobs}: JobCardProp) => {
+
+  const isSaved = savedJobs.some(el => el.id == job.id);
+  // console.log(isSaved);
   return (
-    <div className="card bg-base-100 border border-base-300 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 rounded-2xl my-3">
+    <div className={`card ${isSaved ? " border-green-300" : " border-base-300"} bg-base-100 border border-base-300 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 rounded-2xl my-3`}>
       <div className="card-body gap-5 p-5">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
@@ -39,8 +44,8 @@ const JobCard = ({ job, handleSavedJob }: JobCardProp) => {
 
           <button
             onClick={()=> handleSavedJob(job)}
-           className="btn btn-primary rounded-xl px-6 w-full sm:w-auto">
-            Saved
+           className={`btn ${isSaved ? ' btn-success' : 'btn-primary'} rounded-xl px-6 w-full sm:w-auto`}>
+            <FaBookmark />Saved
           </button>
         </div>
       </div>

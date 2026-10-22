@@ -1,5 +1,9 @@
+interface FilterSectionProps {
+  handleTabChange: (type: "all" | "frontend" | "backend" | "design") => void;
+  activeTab: "all" | "frontend" | "backend" | "design";
+}
 
-const FilterSection = () => {
+const FilterSection = ({ handleTabChange, activeTab }: FilterSectionProps) => {
   return (
     <div className="container mx-auto my-10 px-4">
       <div className="mb-8">
@@ -26,25 +30,33 @@ const FilterSection = () => {
             <path d="m21 21-4.3-4.3" />
           </svg>
 
-          <input
-            type="search"
-            placeholder="Search jobs..."
-            className="grow"
-          />
+          <input type="search" placeholder="Search jobs..." className="grow" />
         </label>
 
         {/* TAB section */}
         <div className="flex flex-wrap items-center gap-2">
-          <button className="btn btn-primary rounded-full px-6">
+          <button
+            onClick={() => handleTabChange("all")}
+            className={`btn ${activeTab === "all" ? "btn-primary" : "btn-ghost"} border border-base-300 rounded-full px-6`}
+          >
             All
           </button>
-          <button className="btn btn-ghost border border-base-300 rounded-full px-5">
+          <button
+            onClick={() => handleTabChange("frontend")}
+            className={`btn ${activeTab === "frontend" ? "btn-primary" : "btn-ghost"} border border-base-300 rounded-full px-6`}
+          >
             Frontend
           </button>
-          <button className="btn btn-ghost border border-base-300 rounded-full px-5">
+          <button
+            onClick={() => handleTabChange("backend")}
+            className={`btn ${activeTab === "backend" ? "btn-primary" : "btn-ghost"} border border-base-300 rounded-full px-6`}
+          >
             Backend
           </button>
-          <button className="btn btn-ghost border border-base-300 rounded-full px-5">
+          <button
+            onClick={() => handleTabChange("design")}
+            className={`btn ${activeTab === "design" ? "btn-primary" : "btn-ghost"} border border-base-300 rounded-full px-6`}
+          >
             Design
           </button>
         </div>

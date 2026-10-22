@@ -44,7 +44,7 @@ const JobsSection = ({
         </div>
         <div className="grid grid-cols-2 gap-5 ">
           {jobsData.map((item: IJob) => (
-            <JobCard key={item.id} job={item} handleSavedJob={handleSavedJob} />
+            <JobCard key={item.id} job={item} handleSavedJob={handleSavedJob} savedJobs={savedJobs} />
           ))}
         </div>
       </div>
@@ -59,10 +59,10 @@ const JobsSection = ({
            {savedJobs.length} saved
           </p>
         </div>
-        <div>
-            {
+        <div className="border border-slate-200 rounded-xl p-3">
+            {savedJobs.length >0 ?
                 savedJobs.map(item => <SavedJobCard
-                key={item.id} job={item} handleRemoveJob={handleRemoveJob} />)
+                key={item.id} job={item} handleRemoveJob={handleRemoveJob} />): <p className="text-center text-2xl font-bold text-blue-400 border rounded-2xl py-8">no Jobs saved</p>
             }
         </div>
       </div>
