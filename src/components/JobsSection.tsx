@@ -1,5 +1,12 @@
+import type { IJob } from "../types/type";
+import JobCard from "./JobCard";
 
-const JobsSection = () => {
+const JobsSection = ({jobsData}:{jobsData:IJob[]}) => {
+
+    const handleSavedJob = (job:IJob) =>{
+        console.log(job);
+    }
+    
     return (
         <div className='container mx-auto flex justify-between gap-6'>
             {/* Latest Job */}
@@ -8,6 +15,11 @@ const JobsSection = () => {
                     <h3 className="text-2xl font-bold">Lastest Jobs</h3>
                     <p className="text-slate-400
                     ">6 role found</p>
+                </div>
+                <div className="grid grid-cols-2 gap-5 ">
+                    {
+                        jobsData.map((item:IJob) => <JobCard job={item} handleSavedJob={handleSavedJob}  />)
+                    }
                 </div>
             </div>
             {/* Saved Jobs */}
