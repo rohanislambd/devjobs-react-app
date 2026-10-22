@@ -1,4 +1,4 @@
-import { use } from "react";
+import { use, useState } from "react";
 import FilterSection from "./FilterSection";
 import JobsSection from "./JobsSection";
 import Navbar from "./Navbar";
@@ -10,13 +10,15 @@ interface MainComponentProps  {
 
 const MainComponent = ({jobsPromis}:MainComponentProps ) => {
     const jobsData:IJob[] = use(jobsPromis);
+
+    const [savedJobs, setSavedJobs] = useState<IJob[]>([]);
     
   return (
     <>
-      <Navbar />
+      <Navbar savedJobs={savedJobs} />
 
       <FilterSection />
-      <JobsSection jobsData={jobsData}/>
+      <JobsSection jobsData={jobsData} savedJobs={savedJobs} setSavedJobs={setSavedJobs} />
     </>
   );
 };

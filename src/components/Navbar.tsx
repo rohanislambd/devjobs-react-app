@@ -1,6 +1,7 @@
 import { FaBookmark } from "react-icons/fa";
+import type { IJob } from "../types/type";
 
-const Navbar = () => {
+const Navbar = ({savedJobs}:{savedJobs:IJob[]}) => {
   const links = (
     <>
       <li className="font-semibold">
@@ -58,7 +59,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         <button className="btn btn-neutral">
-          <FaBookmark /> Saved Job.2
+          <FaBookmark /> Saved Job {savedJobs.length}
         </button>
       </div>
     </div>
