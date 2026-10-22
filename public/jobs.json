@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "title": "Junior Frontend Developer",
+    "jobType": "Full-time",
+    "salaryRange": "৳25,000 - ৳40,000/month",
+    "location": "Dhaka, Bangladesh",
+    "field": "Frontend"
+  },
+  {
+    "id": 2,
+    "title": "Senior Frontend Engineer",
+    "jobType": "Full-time",
+    "salaryRange": "৳80,000 - ৳120,000/month",
+    "location": "Remote",
+    "field": "Frontend"
+  },
+  {
+    "id": 3,
+    "title": "React.js Developer",
+    "jobType": "Contract",
+    "salaryRange": "৳40,000 - ৳65,000/month",
+    "location": "Chattogram, Bangladesh",
+    "field": "Frontend"
+  },
+  {
+    "id": 4,
+    "title": "Backend Developer",
+    "jobType": "Full-time",
+    "salaryRange": "৳35,000 - ৳60,000/month",
+    "location": "Dhaka, Bangladesh",
+    "field": "Backend"
+  },
+  {
+    "id": 5,
+    "title": "Senior Node.js Engineer",
+    "jobType": "Full-time",
+    "salaryRange": "৳90,000 - ৳140,000/month",
+    "location": "Remote",
+    "field": "Backend"
+  },
+  {
+    "id": 6,
+    "title": "Junior Backend Developer",
+    "jobType": "Internship",
+    "salaryRange": "৳10,000 - ৳18,000/month",
+    "location": "Sylhet, Bangladesh",
+    "field": "Backend"
+  },
+  {
+    "id": 7,
+    "title": "UI/UX Designer",
+    "jobType": "Full-time",
+    "salaryRange": "৳30,000 - ৳50,000/month",
+    "location": "Dhaka, Bangladesh",
+    "field": "Design"
+  },
+  {
+    "id": 8,
+    "title": "Senior Product Designer",
+    "jobType": "Full-time",
+    "salaryRange": "৳70,000 - ৳110,000/month",
+    "location": "Remote",
+    "field": "Design"
+  },
+  {
+    "id": 9,
+    "title": "Graphic Designer",
+    "jobType": "Part-time",
+    "salaryRange": "৳15,000 - ৳25,000/month",
+    "location": "Rajshahi, Bangladesh",
+    "field": "Design"
+  },
+  {
+    "id": 10,
+    "title": "Full Stack Developer",
+    "jobType": "Full-time",
+    "salaryRange": "৳50,000 - ৳90,000/month",
+    "location": "Dhaka, Bangladesh",
+    "field": "Full Stack"
+  },
+  {
+    "id": 11,
+    "title": "Next.js Developer",
+    "jobType": "Contract",
+    "salaryRange": "৳45,000 - ৳75,000/month",
+    "location": "Remote",
+    "field": "Frontend"
+  },
+  {
+    "id": 12,
+    "title": "API Developer",
+    "jobType": "Full-time",
+    "salaryRange": "৳40,000 - ৳70,000/month",
+    "location": "Khulna, Bangladesh",
+    "field": "Backend"
+  },
+  {
+    "id": 13,
+    "title": "Product UI Designer",
+    "jobType": "Contract",
+    "salaryRange": "৳35,000 - ৳60,000/month",
+    "location": "Remote",
+    "field": "Design"
+  },
+  {
+    "id": 14,
+    "title": "Frontend Development Intern",
+    "jobType": "Internship",
+    "salaryRange": "৳8,000 - ৳15,000/month",
+    "location": "Dhaka, Bangladesh",
+    "field": "Frontend"
+  },
+  {
+    "id": 15,
+    "title": "DevOps Engineer",
+    "jobType": "Full-time",
+    "salaryRange": "৳60,000 - ৳100,000/month",
+    "location": "Dhaka, Bangladesh",
+    "field": "Backend"
+  }
+]

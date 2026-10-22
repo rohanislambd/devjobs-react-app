@@ -1,5 +1,6 @@
 import './App.css'
 import FilterSection from './components/FilterSection'
+import JobsSection from './components/JobsSection'
 import Navbar from './components/Navbar'
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Navbar/>
 
       <FilterSection/>
+      <JobsSection/>
    
     </div>
   )

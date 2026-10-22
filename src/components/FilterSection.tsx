@@ -13,7 +13,7 @@ const FilterSection = () => {
 
       <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6 rounded-2xl border border-base-300 bg-base-100 p-5 md:p-6 shadow-sm">
         {/* Search */}
-        <label className="input input-bordered flex items-center gap-3 w-full md:max-w-md rounded-xl">
+        <label className="input input-bordered flex items-center gap-3 w-full md:w-[60%]  rounded-xl">
           <svg
             className="h-5 w-5 opacity-50"
             xmlns="http://www.w3.org/2000/svg"
