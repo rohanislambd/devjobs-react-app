@@ -1,9 +1,12 @@
+
 interface FilterSectionProps {
   handleTabChange: (type: "all" | "frontend" | "backend" | "design") => void;
   activeTab: "all" | "frontend" | "backend" | "design";
+  handleSearch: (value:string) => void;
+  searchText:string
 }
 
-const FilterSection = ({ handleTabChange, activeTab }: FilterSectionProps) => {
+const FilterSection = ({ handleTabChange, activeTab, handleSearch, searchText }: FilterSectionProps) => {
   return (
     <div className="container mx-auto my-10 px-4">
       <div className="mb-8">
@@ -30,7 +33,7 @@ const FilterSection = ({ handleTabChange, activeTab }: FilterSectionProps) => {
             <path d="m21 21-4.3-4.3" />
           </svg>
 
-          <input type="search" placeholder="Search jobs..." className="grow" />
+          <input value={searchText} onChange={(e) => handleSearch(e.target.value)} type="search" placeholder="Search jobs..." className="grow" />
         </label>
 
         {/* TAB section */}

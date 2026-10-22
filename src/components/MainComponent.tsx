@@ -15,7 +15,9 @@ const MainComponent = ({jobsPromis}:MainComponentProps ) => {
     const [savedJobs, setSavedJobs] = useState<IJob[]>([]);
 
     const [activeTab, setActiveTab] = useState<"all" | "frontend" | "backend" | "design">("all");
-    
+    const [searchText , setSearchText] = useState("");
+
+    // tab switch
     const handleTabChange = (type: "all" |"frontend"|"backend"| "design") =>{
       setActiveTab(type);
       if(type === "frontend"){
@@ -33,11 +35,19 @@ const MainComponent = ({jobsPromis}:MainComponentProps ) => {
       }
     }
 
+    // Search
+    const handleSearch = (value: string) =>{
+      setSearchText(value)
+      const filterJobs = data.filter((job) =>
+    job.title.toLowerCase().includes(value.toLowerCase()))
+      setJobData(filterJobs)
+    }
+
   return (
     <>
       <Navbar savedJobs={savedJobs} />
 
-      <FilterSection handleTabChange={handleTabChange} activeTab={activeTab}/>
+      <FilterSection handleTabChange={handleTabChange} activeTab={activeTab} handleSearch={handleSearch} searchText={searchText}/>
       <JobsSection jobsData={jobsData} savedJobs={savedJobs} setSavedJobs={setSavedJobs} />
     </>
   );
