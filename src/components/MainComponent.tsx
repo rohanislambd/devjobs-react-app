@@ -1,4 +1,4 @@
-import { use, useState } from "react";
+import { use, useEffect, useState } from "react";
 import FilterSection from "./FilterSection";
 import JobsSection from "./JobsSection";
 import Navbar from "./Navbar";
@@ -13,6 +13,7 @@ const MainComponent = ({jobsPromis}:MainComponentProps ) => {
     const [jobsData, setJobData] =useState(data);
 
     const [savedJobs, setSavedJobs] = useState<IJob[]>([]);
+    const [isLoaded, setLoaded] =useState(false);
 
     const [activeTab, setActiveTab] = useState<"all" | "frontend" | "backend" | "design">("all");
     const [searchText , setSearchText] = useState("");
@@ -42,6 +43,25 @@ const MainComponent = ({jobsPromis}:MainComponentProps ) => {
     job.title.toLowerCase().includes(value.toLowerCase()))
       setJobData(filterJobs)
     }
+
+    //local storage
+    
+    // Load saved jobs
+    useEffect(()=>{
+      const storedJobs = localStorage.getItem("saveJobs");
+
+      if(storedJobs){
+        setSavedJobs(JSON.parse(storedJobs));
+      }
+      setLoaded(true)
+    },[]);
+
+    // save saved jobs
+    useEffect(()=>{
+       if(!isLoaded) return;
+
+        localStorage.setItem("saveJobs", JSON.stringify(savedJobs))
+    }, [savedJobs, isLoaded])
 
   return (
     <>
